@@ -4,7 +4,7 @@ import xgboost as xgb
 import mlflow
 from sklearn import datasets
 
-# V2
+# Branch main, v1
 mlflow.autolog(disable=False)
 
 iris = datasets.load_iris()
