@@ -7,8 +7,14 @@ from sklearn import datasets
 # Branch Exp1, v1
 mlflow.autolog(disable=False)
 
+mlflow.set_experiment("/Repos/jin.zhang@databricks.com/db_repos_mlflow/XGBoost_Exp")
+
 iris = datasets.load_iris()
 X = pd.DataFrame(iris.data[:, :2], columns=iris.feature_names[:2])
 y = iris.target
 dataset = xgb.DMatrix(X, y)
 xgb.train({"num_class": 3, "eval_metric": "mlogloss"}, dataset, evals=[(dataset, "train")])
+
+# COMMAND ----------
+
+
